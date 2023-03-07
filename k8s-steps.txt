@@ -1,0 +1,583 @@
+Microsoft Windows [Version 10.0.22621.1265]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\00112>docker images
+REPOSITORY                              TAG                                        IMAGE ID       CREATED         SIZE
+k8s                                     1.0                                        55557ea49126   21 hours ago    490MB
+k8s-app.jar                             1.0                                        e16478fa9528   23 hours ago    568MB
+my-spring-app                           latest                                     18bf3de4ddeb   5 weeks ago     490MB
+<none>                                  <none>                                     7dd77a1cbbfa   5 weeks ago     490MB
+enggadda/k8s-demo                       latest                                     e2e2c123e60c   5 weeks ago     490MB
+k8s-demo                                latest                                     1f44aac37e81   5 weeks ago     490MB
+<none>                                  <none>                                     df1df3452224   5 weeks ago     490MB
+<none>                                  <none>                                     38732493e001   5 weeks ago     490MB
+<none>                                  <none>                                     efebef2771ee   5 weeks ago     490MB
+enggadda/spring-devops                  latest                                     a3f046f13a23   5 weeks ago     490MB
+enggadda/github-action                  latest                                     080a9b866382   6 weeks ago     490MB
+springboot-mysql-docker                 latest                                     ba8b572a9f73   6 weeks ago     514MB
+springdockercompose                     latest                                     a8dc939bf018   6 weeks ago     496MB
+spring-mongo-app                        latest                                     f085c7d6ad52   7 weeks ago     496MB
+mongo                                   latest                                     0850fead9327   2 months ago    700MB
+mysql                                   8.0.31                                     7484689f290f   3 months ago    538MB
+spring-boot-docker.jar                  latest                                     f242eb914e75   8 months ago    544MB
+0011223344ravi/spring-boot-docker.jar   latest                                     f242eb914e75   8 months ago    544MB
+gcr.io/k8s-minikube/kicbase             v0.0.32                                    ff7b11088f07   8 months ago    1.15GBcrazymax/linguist                       7.20.0                                     dc5f9ae3be6a   9 months ago    72.2MBopenjdk                                 17                                         5e28ba2b4cdb   10 months ago   471MB
+hello-world                             latest                                     feb5d9fea6a5   17 months ago   13.3kBdocker/desktop-git-helper               5a4fca126aadcd3f6cc3a011aa991de982ae7000   efe2d67c403b   19 months ago   44.2MBmysql                                   8.0.13                                     102816b1ee7d   4 years ago     486MB
+
+C:\Users\00112>minikube status
+minikube
+type: Control Plane
+host: Stopped
+kubelet: Stopped
+apiserver: Stopped
+kubeconfig: Stopped
+
+
+C:\Users\00112>minikube start
+* minikube v1.26.0 on Microsoft Windows 11 Home Single Language 10.0.22621 Build 22621
+* Using the docker driver based on existing profile
+* Starting control plane node minikube in cluster minikube
+* Pulling base image ...
+* Restarting existing docker container for "minikube" ...
+* Preparing Kubernetes v1.24.1 on Docker 20.10.17 ...
+* Verifying Kubernetes components...
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+  - Using image kubernetesui/dashboard:v2.6.0
+  - Using image kubernetesui/metrics-scraper:v1.0.8
+* Enabled addons: default-storageclass, storage-provisioner, dashboard
+* Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+C:\Users\00112>minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+
+C:\Users\00112>minikube stop
+* Stopping node "minikube"  ...
+* Powering off "minikube" via SSH ...
+* 1 node stopped.
+
+C:\Users\00112>minikube status
+minikube
+type: Control Plane
+host: Stopped
+kubelet: Stopped
+apiserver: Stopped
+kubeconfig: Stopped
+
+
+C:\Users\00112>minikube start --driver=docker
+* minikube v1.26.0 on Microsoft Windows 11 Home Single Language 10.0.22621 Build 22621
+* Using the docker driver based on existing profile
+* Starting control plane node minikube in cluster minikube
+* Pulling base image ...
+* Restarting existing docker container for "minikube" ...
+* Preparing Kubernetes v1.24.1 on Docker 20.10.17 ...
+* Verifying Kubernetes components...
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+  - Using image kubernetesui/dashboard:v2.6.0
+  - Using image kubernetesui/metrics-scraper:v1.0.8
+* Enabled addons: storage-provisioner, default-storageclass, dashboard
+* Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+C:\Users\00112>minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+
+C:\Users\00112>minikube docker-env
+SET DOCKER_TLS_VERIFY=1
+SET DOCKER_HOST=tcp://127.0.0.1:60722
+SET DOCKER_CERT_PATH=C:\Users\00112\.minikube\certs
+SET MINIKUBE_ACTIVE_DOCKERD=minikube
+REM To point your shell to minikube's docker-daemon, run:
+REM @FOR /f "tokens=*" %i IN ('minikube -p minikube docker-env --shell cmd') DO @%i
+
+C:\Users\00112>@FOR /f "tokens=*" %i IN ('minikube -p minikube docker-env --shell cmd') DO @%i
+
+C:\Users\00112>cd ..cd
+The system cannot find the path specified.
+
+C:\Users\00112>cd ..
+
+C:\Users>cd..
+
+C:\>cd Youtube
+
+C:\Youtube>cd EnggAdda
+
+C:\Youtube\EnggAdda>cd Project
+
+C:\Youtube\EnggAdda\Project>cd March
+
+C:\Youtube\EnggAdda\Project\March>cd k8sdemo-deployment-file
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker buil -t k8: 1.0 .
+unknown shorthand flag: 't' in -t
+See 'docker --help'.
+
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Options:
+      --config string      Location of client config files (default
+                           "C:\\Users\\00112\\.docker")
+  -c, --context string     Name of the context to use to connect to the
+                           daemon (overrides DOCKER_HOST env var and
+                           default context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket(s) to connect to
+  -l, --log-level string   Set the logging level
+                           ("debug"|"info"|"warn"|"error"|"fatal")
+                           (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default
+                           "C:\\Users\\00112\\.minikube\\certs\\ca.pem")
+      --tlscert string     Path to TLS certificate file (default
+                           "C:\\Users\\00112\\.minikube\\certs\\cert.pem")
+      --tlskey string      Path to TLS key file (default
+                           "C:\\Users\\00112\\.minikube\\certs\\key.pem")
+      --tlsverify          Use TLS and verify the remote (default true)
+  -v, --version            Print version information and quit
+
+Management Commands:
+  builder     Manage builds
+  buildx*     Docker Buildx (Docker Inc., v0.9.1)
+  compose*    Docker Compose (Docker Inc., v2.13.0)
+  config      Manage Docker configs
+  container   Manage containers
+  context     Manage contexts
+  dev*        Docker Dev Environments (Docker Inc., v0.0.5)
+  extension*  Manages Docker extensions (Docker Inc., v0.2.16)
+  image       Manage images
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  node        Manage Swarm nodes
+  plugin      Manage plugins
+  sbom*       View the packaged-based Software Bill Of Materials (SBOM) for an image (Anchore Inc., 0.6.0)
+  scan*       Docker Scan (Docker Inc., v0.22.0)
+  secret      Manage Docker secrets
+  service     Manage services
+  stack       Manage Docker stacks
+  swarm       Manage Swarm
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  build       Build an image from a Dockerfile
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  images      List images
+  import      Import the contents from a tarball to create a filesystem image
+  info        Display system-wide information
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  login       Log in to a Docker registry
+  logout      Log out from a Docker registry
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  ps          List containers
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  run         Run a command in a new container
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  search      Search the Docker Hub for images
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  version     Show the Docker version information
+  wait        Block until one or more containers stop, then print their exit codes
+
+Run 'docker COMMAND --help' for more information on a command.
+
+To get more help with docker, check out our guides at https://docs.docker.com/go/guides/
+
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker build -t k8: 1.0 .
+invalid argument "k8:" for "-t, --tag" flag: invalid reference format
+See 'docker build --help'.
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker build -t k8 : 1.0 .
+"docker build" requires exactly 1 argument.
+See 'docker build --help'.
+
+Usage:  docker build [OPTIONS] PATH | URL | -
+
+Build an image from a Dockerfile
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker build -t k8s1:1.0 .
+Sending build context to Docker daemon  18.83MB
+Step 1/4 : FROM openjdk:17
+ ---> 5e28ba2b4cdb
+Step 2/4 : EXPOSE 8080
+ ---> Using cache
+ ---> cd0278ed15b2
+Step 3/4 : ADD target/k8s-app.jar k8s-app.jar
+ ---> 4d5f61892bb4
+Step 4/4 : ENTRYPOINT ["java","-jar","/k8s-app.jar"]
+ ---> Running in bc56718a6226
+Removing intermediate container bc56718a6226
+ ---> 9c10d657d9b9
+Successfully built 9c10d657d9b9
+Successfully tagged k8s1:1.0
+SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have '-rwxr-xr-x' permissions. It is recommended to double check and reset permissions for sensitive files and directories.
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker images
+REPOSITORY                                TAG       IMAGE ID       CREATED         SIZE
+k8s1                                      1.0       9c10d657d9b9   9 seconds ago   490MB
+k8s                                       1.0       9f0fd970dd1d   9 hours ago     490MB
+k8s                                       latest    9f0fd970dd1d   9 hours ago     490MB
+kubernetesui/dashboard                    <none>    1042d9e0d8fc   9 months ago    246MB
+kubernetesui/metrics-scraper              <none>    115053965e86   9 months ago    43.8MB
+k8s.gcr.io/kube-apiserver                 v1.24.1   e9f4b425f919   9 months ago    130MB
+k8s.gcr.io/kube-scheduler                 v1.24.1   18688a72645c   9 months ago    51MB
+k8s.gcr.io/kube-proxy                     v1.24.1   beb86f5d8e6c   9 months ago    110MB
+k8s.gcr.io/kube-controller-manager        v1.24.1   b4ea7e648530   9 months ago    119MB
+openjdk                                   17        5e28ba2b4cdb   10 months ago   471MB
+k8s.gcr.io/etcd                           3.5.3-0   aebe758cef4c   10 months ago   299MB
+k8s.gcr.io/pause                          3.7       221177c6082a   12 months ago   711kB
+k8s.gcr.io/coredns/coredns                v1.8.6    a4ca41631cc7   17 months ago   46.8MB
+k8s.gcr.io/pause                          3.6       6270bb605e12   18 months ago   683kB
+gcr.io/k8s-minikube/storage-provisioner   v5        6e38f40d628d   23 months ago   31.5MB
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>rmi k8s
+'rmi' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker rmi k8s
+Untagged: k8s:latest
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker images
+REPOSITORY                                TAG       IMAGE ID       CREATED          SIZE
+k8s1                                      1.0       9c10d657d9b9   45 seconds ago   490MB
+k8s                                       1.0       9f0fd970dd1d   9 hours ago      490MB
+kubernetesui/dashboard                    <none>    1042d9e0d8fc   9 months ago     246MB
+kubernetesui/metrics-scraper              <none>    115053965e86   9 months ago     43.8MB
+k8s.gcr.io/kube-apiserver                 v1.24.1   e9f4b425f919   9 months ago     130MB
+k8s.gcr.io/kube-scheduler                 v1.24.1   18688a72645c   9 months ago     51MB
+k8s.gcr.io/kube-controller-manager        v1.24.1   b4ea7e648530   9 months ago     119MB
+k8s.gcr.io/kube-proxy                     v1.24.1   beb86f5d8e6c   9 months ago     110MB
+openjdk                                   17        5e28ba2b4cdb   10 months ago    471MB
+k8s.gcr.io/etcd                           3.5.3-0   aebe758cef4c   10 months ago    299MB
+k8s.gcr.io/pause                          3.7       221177c6082a   12 months ago    711kB
+k8s.gcr.io/coredns/coredns                v1.8.6    a4ca41631cc7   17 months ago    46.8MB
+k8s.gcr.io/pause                          3.6       6270bb605e12   18 months ago    683kB
+gcr.io/k8s-minikube/storage-provisioner   v5        6e38f40d628d   23 months ago    31.5MB
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker rmi k8s
+Error: No such image: k8s
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker rmi k8s:1.0
+Untagged: k8s:1.0
+Deleted: sha256:9f0fd970dd1d8a9ea58a73f55170aca3c51f62ee04e99dea605e5159323bbda8
+Deleted: sha256:2549fa53259c00361e0987ff25ed75f58e796b276680b9a7ddef44adf43c95b7
+Deleted: sha256:a9329a8bd43146839ab20588f502785bcaceb07d18135840e0545ecf345f7aab
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker images
+REPOSITORY                                TAG       IMAGE ID       CREATED              SIZE
+k8s1                                      1.0       9c10d657d9b9   About a minute ago   490MB
+kubernetesui/dashboard                    <none>    1042d9e0d8fc   9 months ago         246MB
+kubernetesui/metrics-scraper              <none>    115053965e86   9 months ago         43.8MB
+k8s.gcr.io/kube-apiserver                 v1.24.1   e9f4b425f919   9 months ago         130MB
+k8s.gcr.io/kube-proxy                     v1.24.1   beb86f5d8e6c   9 months ago         110MB
+k8s.gcr.io/kube-scheduler                 v1.24.1   18688a72645c   9 months ago         51MB
+k8s.gcr.io/kube-controller-manager        v1.24.1   b4ea7e648530   9 months ago         119MB
+openjdk                                   17        5e28ba2b4cdb   10 months ago        471MB
+k8s.gcr.io/etcd                           3.5.3-0   aebe758cef4c   10 months ago        299MB
+k8s.gcr.io/pause                          3.7       221177c6082a   12 months ago        711kB
+k8s.gcr.io/coredns/coredns                v1.8.6    a4ca41631cc7   17 months ago        46.8MB
+k8s.gcr.io/pause                          3.6       6270bb605e12   18 months ago        683kB
+gcr.io/k8s-minikube/storage-provisioner   v5        6e38f40d628d   23 months ago        31.5MB
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>ls-l
+'ls-l' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl apply -f deployment.yaml
+deployment.apps/spring-boot-k8s created
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl get deployment
+NAME              READY   UP-TO-DATE   AVAILABLE   AGE
+spring-boot-k8s   2/2     2            2           11s
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl get pods
+NAME                              READY   STATUS    RESTARTS   AGE
+spring-boot-k8s-b65f68c5f-2sf7z   1/1     Running   0          65s
+spring-boot-k8s-b65f68c5f-7h4wb   1/1     Running   0          65s
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl logs spring-boot-k8s-b65f68c5f-2sf7z
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.4)
+
+2023-03-07T13:32:34.118Z  INFO 1 --- [           main] c.e.k.K8sdemoDeploymentFileApplication   : Starting K8sdemoDeploymentFileApplication v0.0.1-SNAPSHOT using Java 17.0.2 with PID 1 (/k8s-app.jar started by root in /)
+2023-03-07T13:32:34.128Z  INFO 1 --- [           main] c.e.k.K8sdemoDeploymentFileApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-03-07T13:32:40.147Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-03-07T13:32:40.213Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-03-07T13:32:40.213Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-03-07T13:32:40.852Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-03-07T13:32:40.911Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6129 ms
+2023-03-07T13:32:45.338Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-03-07T13:32:45.632Z  INFO 1 --- [           main] c.e.k.K8sdemoDeploymentFileApplication   : Started K8sdemoDeploymentFileApplication in 14.785 seconds (process running for 18.625)
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl apply -f service.yaml
+service/springboot-k8s-svc created
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl get service
+NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+kubernetes           ClusterIP   10.96.0.1       <none>        443/TCP          41d
+springboot-k8s-svc   NodePort    10.104.204.39   <none>        8080:30761/TCP   9s
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>minikube service springboot-k8s-svc --url
+http://127.0.0.1:62048
+! Because you are using a Docker driver on windows, the terminal needs to be open to run it.
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>minikube service springboot-k8s-svc --url
+http://127.0.0.1:62239
+! Because you are using a Docker driver on windows, the terminal needs to be open to run it.
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker images
+REPOSITORY                                TAG       IMAGE ID       CREATED          SIZE
+k8s1                                      1.0       9c10d657d9b9   19 minutes ago   490MB
+kubernetesui/dashboard                    <none>    1042d9e0d8fc   9 months ago     246MB
+kubernetesui/metrics-scraper              <none>    115053965e86   9 months ago     43.8MB
+k8s.gcr.io/kube-apiserver                 v1.24.1   e9f4b425f919   9 months ago     130MB
+k8s.gcr.io/kube-scheduler                 v1.24.1   18688a72645c   9 months ago     51MB
+k8s.gcr.io/kube-controller-manager        v1.24.1   b4ea7e648530   9 months ago     119MB
+k8s.gcr.io/kube-proxy                     v1.24.1   beb86f5d8e6c   9 months ago     110MB
+openjdk                                   17        5e28ba2b4cdb   10 months ago    471MB
+k8s.gcr.io/etcd                           3.5.3-0   aebe758cef4c   10 months ago    299MB
+k8s.gcr.io/pause                          3.7       221177c6082a   12 months ago    711kB
+k8s.gcr.io/coredns/coredns                v1.8.6    a4ca41631cc7   17 months ago    46.8MB
+k8s.gcr.io/pause                          3.6       6270bb605e12   18 months ago    683kB
+gcr.io/k8s-minikube/storage-provisioner   v5        6e38f40d628d   23 months ago    31.5MB
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker rmi k8s1
+Error: No such image: k8s1
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker rmi k8s1:1.0
+Error response from daemon: conflict: unable to remove repository reference "k8s1:1.0" (must force) - container d3e941361946 is using its referenced image 9c10d657d9b9
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>minikube stop
+* Stopping node "minikube"  ...
+* Powering off "minikube" via SSH ...
+* 1 node stopped.
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker rmi k8s1:1.0
+error during connect: Delete "https://127.0.0.1:60722/v1.24/images/k8s1:1.0": dial tcp 127.0.0.1:60722: connectex: No connection could be made because the target machine actively refused it.
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker images
+error during connect: Get "https://127.0.0.1:60722/v1.24/images/json": dial tcp 127.0.0.1:60722: connectex: No connection could be made because the target machine actively refused it.
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker images
+error during connect: Get "https://127.0.0.1:60722/v1.24/images/json": dial tcp 127.0.0.1:60722: connectex: No connection could be made because the target machine actively refused it.
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>minikube start --driver=docker
+* minikube v1.26.0 on Microsoft Windows 11 Home Single Language 10.0.22621 Build 22621
+  - MINIKUBE_ACTIVE_DOCKERD=minikube
+* Using the docker driver based on existing profile
+* Starting control plane node minikube in cluster minikube
+* Pulling base image ...
+* Noticed you have an activated docker-env on docker driver in this terminal:
+! Please re-eval your docker-env, To ensure your environment variables have updated ports:
+
+        'minikube -p minikube docker-env'
+
+
+* Restarting existing docker container for "minikube" ...
+* Preparing Kubernetes v1.24.1 on Docker 20.10.17 ...
+* Verifying Kubernetes components...
+  - Using image kubernetesui/dashboard:v2.6.0
+  - Using image kubernetesui/metrics-scraper:v1.0.8
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v5
+* Enabled addons: storage-provisioner, default-storageclass, dashboard
+* Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker images
+error during connect: Get "https://127.0.0.1:60722/v1.24/images/json": dial tcp 127.0.0.1:60722: connectex: No connection could be made because the target machine actively refused it.
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+docker-env: in-use
+
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>minikube docker-env
+SET DOCKER_TLS_VERIFY=1
+SET DOCKER_HOST=tcp://127.0.0.1:62453
+SET DOCKER_CERT_PATH=C:\Users\00112\.minikube\certs
+SET MINIKUBE_ACTIVE_DOCKERD=minikube
+REM To point your shell to minikube's docker-daemon, run:
+REM @FOR /f "tokens=*" %i IN ('minikube -p minikube docker-env --shell cmd') DO @%i
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>@FOR /f "tokens=*" %i IN ('minikube -p minikube docker-env --shell cmd') DO @%i
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker images
+REPOSITORY                                TAG       IMAGE ID       CREATED          SIZE
+k8s1                                      1.0       9c10d657d9b9   24 minutes ago   490MB
+kubernetesui/dashboard                    <none>    1042d9e0d8fc   9 months ago     246MB
+kubernetesui/metrics-scraper              <none>    115053965e86   9 months ago     43.8MB
+k8s.gcr.io/kube-apiserver                 v1.24.1   e9f4b425f919   9 months ago     130MB
+k8s.gcr.io/kube-controller-manager        v1.24.1   b4ea7e648530   9 months ago     119MB
+k8s.gcr.io/kube-proxy                     v1.24.1   beb86f5d8e6c   9 months ago     110MB
+k8s.gcr.io/kube-scheduler                 v1.24.1   18688a72645c   9 months ago     51MB
+openjdk                                   17        5e28ba2b4cdb   10 months ago    471MB
+k8s.gcr.io/etcd                           3.5.3-0   aebe758cef4c   10 months ago    299MB
+k8s.gcr.io/pause                          3.7       221177c6082a   12 months ago    711kB
+k8s.gcr.io/coredns/coredns                v1.8.6    a4ca41631cc7   17 months ago    46.8MB
+k8s.gcr.io/pause                          3.6       6270bb605e12   18 months ago    683kB
+gcr.io/k8s-minikube/storage-provisioner   v5        6e38f40d628d   23 months ago    31.5MB
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker build -t k8s2:1.0 .
+Sending build context to Docker daemon  18.83MB
+Step 1/4 : FROM openjdk:17
+ ---> 5e28ba2b4cdb
+Step 2/4 : EXPOSE 8080
+ ---> Using cache
+ ---> cd0278ed15b2
+Step 3/4 : ADD target/k8s-app.jar k8s-app.jar
+ ---> 0323a68453fe
+Step 4/4 : ENTRYPOINT ["java","-jar","/k8s-app.jar"]
+ ---> Running in 53438d68f4da
+Removing intermediate container 53438d68f4da
+ ---> 2d16101c9035
+Successfully built 2d16101c9035
+Successfully tagged k8s2:1.0
+SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have '-rwxr-xr-x' permissions. It is recommended to double check and reset permissions for sensitive files and directories.
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>docker images
+REPOSITORY                                TAG       IMAGE ID       CREATED          SIZE
+k8s2                                      1.0       2d16101c9035   7 seconds ago    490MB
+k8s1                                      1.0       9c10d657d9b9   24 minutes ago   490MB
+kubernetesui/dashboard                    <none>    1042d9e0d8fc   9 months ago     246MB
+kubernetesui/metrics-scraper              <none>    115053965e86   9 months ago     43.8MB
+k8s.gcr.io/kube-apiserver                 v1.24.1   e9f4b425f919   9 months ago     130MB
+k8s.gcr.io/kube-controller-manager        v1.24.1   b4ea7e648530   9 months ago     119MB
+k8s.gcr.io/kube-proxy                     v1.24.1   beb86f5d8e6c   9 months ago     110MB
+k8s.gcr.io/kube-scheduler                 v1.24.1   18688a72645c   9 months ago     51MB
+openjdk                                   17        5e28ba2b4cdb   10 months ago    471MB
+k8s.gcr.io/etcd                           3.5.3-0   aebe758cef4c   10 months ago    299MB
+k8s.gcr.io/pause                          3.7       221177c6082a   12 months ago    711kB
+k8s.gcr.io/coredns/coredns                v1.8.6    a4ca41631cc7   17 months ago    46.8MB
+k8s.gcr.io/pause                          3.6       6270bb605e12   18 months ago    683kB
+gcr.io/k8s-minikube/storage-provisioner   v5        6e38f40d628d   23 months ago    31.5MB
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl get deployment
+NAME              READY   UP-TO-DATE   AVAILABLE   AGE
+spring-boot-k8s   2/2     2            2           16m
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl delete deployment spring-boot-k8s
+deployment.apps "spring-boot-k8s" deleted
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl get service
+NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+kubernetes           ClusterIP   10.96.0.1       <none>        443/TCP          41d
+springboot-k8s-svc   NodePort    10.104.204.39   <none>        8080:30761/TCP   10m
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl delete service springboot-k8s-svc
+service "springboot-k8s-svc" deleted
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl get service
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+kubernetes   ClusterIP   10.96.0.1    <none>        443/TCP   41d
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl apply -f deployment.yaml
+deployment.apps/spring-boot-k8s created
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl get deployments
+NAME              READY   UP-TO-DATE   AVAILABLE   AGE
+spring-boot-k8s   2/2     2            2           17s
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl apply -f service.yaml
+service/springboot-k8s-svc created
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl get service
+NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+kubernetes           ClusterIP   10.96.0.1       <none>        443/TCP          41d
+springboot-k8s-svc   NodePort    10.105.73.157   <none>        8080:32031/TCP   7s
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>minikube service springboot-k8s-svc --url
+http://127.0.0.1:62900
+! Because you are using a Docker driver on windows, the terminal needs to be open to run it.
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl get deployment
+NAME              READY   UP-TO-DATE   AVAILABLE   AGE
+spring-boot-k8s   2/2     2            2           2m32s
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl delete deployment spring-boot-k8s
+deployment.apps "spring-boot-k8s" deleted
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl get service
+NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+kubernetes           ClusterIP   10.96.0.1       <none>        443/TCP          41d
+springboot-k8s-svc   NodePort    10.105.73.157   <none>        8080:32031/TCP   2m38s
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl delete service springboot-k8s-svc
+service "springboot-k8s-svc" deleted
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl apply -f deployment.yaml
+deployment.apps/spring-boot-k8s created
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl apply -f service.yaml
+service/springboot-k8s-svc created
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl get service
+NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+kubernetes           ClusterIP   10.96.0.1       <none>        443/TCP          41d
+springboot-k8s-svc   NodePort    10.108.49.220   <none>        8080:31246/TCP   6s
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>kubectl get deployment
+NAME              READY   UP-TO-DATE   AVAILABLE   AGE
+spring-boot-k8s   2/2     2            2           39s
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>minikube service springboot-k8s-svc --url
+http://127.0.0.1:63124
+! Because you are using a Docker driver on windows, the terminal needs to be open to run it.
+
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>minikube dashboard
+* Verifying dashboard health ...
+* Launching proxy ...
+* Verifying proxy health ...
+* Opening http://127.0.0.1:63381/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/ in your default browser...
+^C
+C:\Youtube\EnggAdda\Project\March\k8sdemo-deployment-file>
